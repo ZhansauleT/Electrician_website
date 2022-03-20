@@ -4,7 +4,8 @@ const modalWindow = () => {
   const modalOverlay = document.querySelector(".modal-overlay");
   const closeBtns = document.querySelectorAll('.close-btn');
 
-  callBackBtn.addEventListener('click', () => {
+  callBackBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     modal.style.display = "block";
     modalOverlay.style.display = "block";
   });
