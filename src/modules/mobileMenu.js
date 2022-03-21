@@ -1,15 +1,21 @@
 const mobileMenu = () => {
   const menuBtn = document.querySelector('.mob-menu-btn');
   const mobileMenu = document.querySelector(".mobile-menu");
+  const mobileMenuOverlay = document.querySelector(".overlay");
   const menuCloseBtn = document.querySelector(".mobile-menu-close");
   const menuItems = mobileMenu.querySelectorAll("ul>li>a");
+
 
   const  handleMenu = () => {
     mobileMenu.classList.toggle('open');
   };
 
+  menuBtn.style.cursor = "pointer";
+  menuCloseBtn.style.cursor = "pointer";
+
   menuBtn.addEventListener('click', handleMenu);
   menuCloseBtn.addEventListener('click', handleMenu);
+  mobileMenuOverlay.addEventListener('click', handleMenu);
 
   menuItems.forEach((item) => {
     item.addEventListener('click', (e) => {

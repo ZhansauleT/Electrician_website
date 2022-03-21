@@ -8,6 +8,7 @@ const modalWindow = () => {
 
   document.addEventListener('click', (e) => {
     if (e.target.matches('.callback-btn') || e.target.matches('.button-services')) {
+      e.preventDefault();
       modal.style.display = "block";
       modalOverlay.style.display = "block";
     } 
