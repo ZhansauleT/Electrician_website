@@ -4,6 +4,7 @@ import mobileMenu from './modules/mobileMenu';
 import link from './modules/link';
 import validation from './modules/validation';
 import topSlider from './modules/topSlider';
+import faq from './modules/faq';
 
 modalWindow();
 menuList();
@@ -11,3 +12,4 @@ mobileMenu();
 link();
 validation();
 topSlider();
+faq();
