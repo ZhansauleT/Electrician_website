@@ -8,12 +8,16 @@ const topSlider = () => {
 
   const prevSlide = (elems, containers, index, strClass1) => {
     elems[index].classList.remove(strClass1);
-    containers[index].style.display = "none";
+    //containers[index].style.opacity = "0";
+    containers[index].style.transition = "opacity 1s";
+    //containers[index].style.display = "none";
   };
 
   const nextSlide = (elems, containers, index, strClass1) => {
+    containers[index].style.opacity = "1";
+    containers[index].style.transition = "opacity 1s";
     elems[index].classList.add(strClass1);
-    containers[index].style.display = "block";
+    //containers[index].style.display = "block";
   };
 
   const autoSlide = () => {
@@ -32,9 +36,9 @@ const topSlider = () => {
     setInterval(autoSlide, 3000);
   };
 
-  const stopSlide = () => {
+  // const stopSlide = () => {
 
-  };
+  // };
 
   startSlide();
 

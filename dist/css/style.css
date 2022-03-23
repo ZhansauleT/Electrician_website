@@ -978,7 +978,7 @@ video#video_background {
 
 /************************* accordeon **************************/
 .accordeon .element-content {
-  display: none;
+  /* display: none; */
   padding: 20px;
   font-size: 13px;
   color: #888885;
