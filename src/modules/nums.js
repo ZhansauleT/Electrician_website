@@ -5,39 +5,26 @@ const nums = () => {
   const numSpan = document.querySelectorAll(".num>span");
   const speed = 200;
   const numValues = [200, 14, 20, 150];
-  
-  //let isScrolling = false;
-
- 
-  // function throttleScroll() {
-  //   if (isScrolling == false ) {
-  //       window.requestAnimationFrame(function() {
-  //         isVisible();
-  //         isScrolling = false;
-  //       });
-  //   }
-  //   isScrolling = true;
-  // }  
 
   const isVisible = () => {
     let coords = numSection.getBoundingClientRect();
     let windowHeight = document.documentElement.clientHeight;
     let topVisible = coords.top > 0 && coords.top < windowHeight;
-    //let bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;
-    
-    if(topVisible){
-      countNumbers();
-    }
+    let bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;
 
-    console.log(topVisible);
-    //return topVisible;
+    //console.log(topVisible);
+    return topVisible && bottomVisible;
   };
 
 
   const countNumbers = () => {
-      numSpan.forEach((num, index) => {
-        nums[index].classList.add("animated");
+        console.log(isVisible());
+        numSpan.forEach((num, index) => {
+
+        if(isVisible()){
         const value = numValues[index];
+
+        nums[index].classList.add("animated");
 
         const animate = setInterval(() => {
           const data = +num.innerText;
@@ -51,17 +38,14 @@ const nums = () => {
             clearInterval(animate);
           }
         }, 1);
-
+      }else{
+        nums[index].classList.remove("animated");
+        num.innerText = "0";
+      }
       });
   };
   
-  window.addEventListener("scroll", () => {
-    return true;
-  });
-  window.removeEventListener("scroll", () => {
-    isVisible();
-  });
-  //document.addEventListener("DOMContentLoaded", countNumbers, false);
+  window.addEventListener("scroll", countNumbers);
   
 };
 
