@@ -12,13 +12,11 @@ const nums = () => {
     let topVisible = coords.top > 0 && coords.top < windowHeight;
     let bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;
 
-    //console.log(topVisible);
     return topVisible && bottomVisible;
   };
 
 
   const countNumbers = () => {
-        console.log(isVisible());
         numSpan.forEach((num, index) => {
 
         if(isVisible()){

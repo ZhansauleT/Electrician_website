@@ -1,5 +1,9 @@
 const sendForm = ({formId, someElem = []}) => {
   const form = document.getElementById(formId);
+  const modal = document.querySelector(".modal-callback");
+  const modalOverlay = document.querySelector(".modal-overlay");
+
+  //console.log(modal);
 
   const statusBlock = document.createElement("div");
   const loadText = "Загрузка...";
@@ -82,6 +86,11 @@ const sendForm = ({formId, someElem = []}) => {
         setTimeout( () => {
           form.removeChild(statusBlock);
         }, 2000);
+
+        setTimeout(() => {
+          modal.style.display = "none";
+          modalOverlay.style.display = "none"; 
+        }, 1000);
 
       })
       .catch(error => {
