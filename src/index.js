@@ -7,6 +7,7 @@ import topSlider from './modules/topSlider';
 import faq from './modules/faq';
 import nums from './modules/nums';
 import toTop from './modules/toTop';
+import sendForm from './modules/sendForm';
 
 modalWindow();
 menuList();
@@ -17,3 +18,12 @@ topSlider();
 faq();
 nums();
 toTop();
+sendForm({
+  formId: 'form1', 
+  someElem: [
+    {
+      //type: 'block',
+      //id: 'total'
+    }
+  ]
+});

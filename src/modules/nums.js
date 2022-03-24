@@ -3,49 +3,65 @@ const nums = () => {
   const numSection = document.querySelector(".num-section");
   const nums = document.querySelectorAll(".num");
   const numSpan = document.querySelectorAll(".num>span");
-  const speed = 100;
+  const speed = 200;
   const numValues = [200, 14, 20, 150];
-
-
-  nums.forEach((num, index) => {
-    num.style.opacity = "1";
-
-    const animate = () => {
-      const value = numValues[index];
-      const data = +numSpan[index].innerText;
-     
-      const time = value / speed;
-
-      if(data < value) {
-        numSpan[index].innerText = Math.ceil(data + time);
-        setTimeout(animate(), 1);
-      }else {
-        numSpan[index].innerText = value;
-        //console.log(value);
-      }
-    };
-
-    animate();
-
-  });
   
+  //let isScrolling = false;
+
+ 
+  // function throttleScroll() {
+  //   if (isScrolling == false ) {
+  //       window.requestAnimationFrame(function() {
+  //         isVisible();
+  //         isScrolling = false;
+  //       });
+  //   }
+  //   isScrolling = true;
+  // }  
 
   const isVisible = () => {
     let coords = numSection.getBoundingClientRect();
     let windowHeight = document.documentElement.clientHeight;
     let topVisible = coords.top > 0 && coords.top < windowHeight;
     //let bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;
+    
+    if(topVisible){
+      countNumbers();
+    }
 
-    return topVisible;
+    console.log(topVisible);
+    //return topVisible;
+  };
+
+
+  const countNumbers = () => {
+      numSpan.forEach((num, index) => {
+        nums[index].classList.add("animated");
+        const value = numValues[index];
+
+        const animate = setInterval(() => {
+          const data = +num.innerText;
+        
+          const time = value / speed;
+
+          if(data < value) {
+            num.innerText = Math.ceil(data + time);
+          }else {
+            //num.innerText = value;
+            clearInterval(animate);
+          }
+        }, 1);
+
+      });
   };
   
-  //window.addEventListener("scroll", isVisible);
-  //window.removeEventListener("scroll", isVisible);
-  
-  //if(isVisible){
-    
-  //}
-  
+  window.addEventListener("scroll", () => {
+    return true;
+  });
+  window.removeEventListener("scroll", () => {
+    isVisible();
+  });
+  //document.addEventListener("DOMContentLoaded", countNumbers, false);
   
 };
 
