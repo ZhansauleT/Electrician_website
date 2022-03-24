@@ -8,6 +8,7 @@ import faq from './modules/faq';
 import nums from './modules/nums';
 import toTop from './modules/toTop';
 import sendForm from './modules/sendForm';
+import carousel from './modules/carousel';
 
 modalWindow();
 menuList();
@@ -27,3 +28,4 @@ sendForm({
     }
   ]
 });
+carousel();

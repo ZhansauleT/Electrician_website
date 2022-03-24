@@ -20,30 +20,33 @@ const nums = () => {
         numSpan.forEach((num, index) => {
 
         if(isVisible()){
-        const value = numValues[index];
+          const value = numValues[index];
 
-        nums[index].classList.add("animated");
+          nums[index].classList.add("animated");
 
-        const animate = setInterval(() => {
-          const data = +num.innerText;
+          const animate = setInterval(() => {
+            const data = +num.innerText;
         
-          const time = value / speed;
+            const time = value / speed;
 
-          if(data < value) {
-            num.innerText = Math.ceil(data + time);
-          }else {
-            //num.innerText = value;
-            clearInterval(animate);
-          }
-        }, 1);
-      }else{
-        nums[index].classList.remove("animated");
-        num.innerText = "0";
-      }
+            if(data < value) {
+              num.innerText = Math.ceil(data + time);
+            } else {
+              //num.innerText = value;
+              clearInterval(animate);
+              window.removeEventListener("scroll", countNumbers);
+            }
+          }, 1);
+        }else{
+          nums[index].classList.remove("animated");
+          num.innerText = "0";
+        }
       });
   };
   
   window.addEventListener("scroll", countNumbers);
+
+  
   
 };
 
