@@ -7,9 +7,9 @@ const carousel = () => {
   const modalOverlay = document.querySelector(".modal-overlay");
   const arrowLeft = document.querySelector(".arrow-left");
   const arrowRight = document.querySelector(".arrow-right");
-  const screenWidth = screen.width;
+  const screenWidth = window.innerWidth;
 
-  console.log(servicesElems);
+  console.log(screenWidth);
 
   let slideSteps = 0;
   let slideAmount = 6;
@@ -19,11 +19,9 @@ const carousel = () => {
     slideAmountVisible = 3;
   }else if(screenWidth <= 991 && screenWidth >= 768){
     slideAmountVisible = 2;
-  }else{
+  }else if(screenWidth < 767){
     slideAmountVisible = 1;
   }
-
-  
 
 
   const prevSlide = () => {
@@ -37,12 +35,12 @@ const carousel = () => {
 
   const nextSlide = () => {
     if(slideSteps < slideAmount - slideAmountVisible){
-      console.log(slideAmountVisible);
+      //console.log(slideAmountVisible);
       slideItems.forEach((item, index) => {
         slideItems[slideSteps].style.display = "none";
       });
       slideSteps++;
-      console.log(slideSteps);
+      //console.log(slideSteps);
     }
   };
 
@@ -58,7 +56,7 @@ const carousel = () => {
     elem.addEventListener('click', (e) => {
       e.preventDefault();
 
-      console.log(e.target);
+      //console.log(e.target);
     
       if(e.target.classList.contains("img-wrapper")){
         modal.style.display = "block";
