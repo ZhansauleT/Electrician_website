@@ -1,23 +1,42 @@
 const carousel = () => {
-  // const services = document.querySelector(".services-elements");
+  const services = document.querySelector(".services-elements");
+  const servicesCarousel = document.querySelector(".services-carousel");
+  const slideItems = document.querySelectorAll(".col-sm-6.col-md-4");
+  const arrowLeft = document.querySelector(".arrow-left");
+  const arrowRight = document.querySelector(".arrow-right");
+
+  let currentSlide = 0;
+  let slideSteps = 0;
+  let slideAmountVisible = 3;
+  let slideAmount = 6;
 
 
-  // let currentSlide = 0;
+  const prevSlide = () => {
+    if(slideSteps > 0){
+      slideSteps--;
+      slideItems[slideSteps].style.display = "block";
+    }
+  };
 
-  // const prevSlide = (elems, containers, index, strClass1) => {
-  //   elems[index].classList.remove(strClass1);
-  //   containers[index].style.opacity = "0";
-  //   containers[index].style.transition = "opacity 1s";
-  //   containers[index].style.left = "-100%";
-  // };
+  //elems, containers, index, strClass1
 
-  // const nextSlide = (elems, containers, index, strClass1) => {
-  //   elems[index].classList.add(strClass1);
-  //   containers[index].style.opacity = "1";
-  //   containers[index].style.transition = "opacity 1s";
-  //   containers[index].style.top = -index*100+"%";
-  //   containers[index].style.left = "0%";
-  // };
+  const nextSlide = () => {
+    if(slideSteps < slideAmount - slideAmountVisible){
+      slideItems.forEach((item, index) => {
+        //item.style.transform = "translateX("+(-400)+"px)";
+        slideItems[slideSteps].style.display = "none";
+      });
+      slideSteps++;
+    }
+  };
+
+  arrowLeft.addEventListener('click', (e) => {
+    prevSlide();
+  });
+
+  arrowRight.addEventListener('click', (e) => {
+    nextSlide();
+  });
 
   // const autoSlide = () => {
   //   prevSlide(sliderItems, sliderContainers, currentSlide, "active");
@@ -30,12 +49,6 @@ const carousel = () => {
     
   //   nextSlide(sliderItems, sliderContainers, currentSlide, "active");
   // };
-
-  // const startSlide = () => {
-  //   setInterval(autoSlide, 3000);
-  // };
-
-  // startSlide();
   
 };
 

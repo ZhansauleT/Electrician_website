@@ -1100,6 +1100,17 @@ video#video_background {
 .services-section .element {
   margin-bottom: 20px;
 }
+
+.services-carousel {
+  overflow: hidden;
+  height: 462.594px;
+}
+
+/* .services-carousel > .element.relative {
+  width: 380px;
+  height: 462.594px;
+} */
+
 .services-section .element .element-content {
   padding: 20px;
   background: #fff;

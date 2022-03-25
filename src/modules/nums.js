@@ -47,7 +47,6 @@ const nums = () => {
   window.addEventListener("scroll", countNumbers);
 
   
-  
 };
 
 export default nums;
