@@ -202,7 +202,7 @@ a:focus {
 a.absolute {
   display: block;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   position: absolute;
   top: 0;
   left: 0;
@@ -720,10 +720,20 @@ hr.white {
 }
 
 /**************************************************   MEDIA QUERIS   *****************************************************/
-
+@media only screen and (min-width: 1240px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 462.594px;
+  }
+}
 @media only screen and (max-width: 1239px) {
   .icons .img-wrapper img {
     width: 140px;
+  }
+
+  .services-carousel {
+    overflow: hidden;
+    height: 400px;
   }
 }
 @media only screen and (max-width: 991px) {
@@ -733,8 +743,235 @@ hr.white {
   .slick-dots {
     padding-top: 30px;
   }
+
+  .services-carousel {
+    overflow: hidden;
+    height: 510px;
+  }
+}
+@media only screen and (max-width: 962px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 500px;
+  }
+}
+
+@media only screen and (max-width: 934px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 490px;
+  }
+}
+
+@media only screen and (max-width: 902px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 480px;
+  }
+
+  .num-section .num {
+    font-size: 45px;
+  }
+  .num-section .num.animated {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 470px;
+  }
+}
+
+@media only screen and (max-width: 842px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 460px;
+  }
+}
+
+@media only screen and (max-width: 812px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 450px;
+  }
+}
+
+@media only screen and (max-width: 794px) {
+  .num-section .num {
+    font-size: 40px;
+  }
+  .num-section .num.animated {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 782px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 440px;
+  }
 }
 @media only screen and (max-width: 767px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 690px;
+  }
+}
+
+@media only screen and (max-width: 756px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 670px;
+  }
+}
+
+@media only screen and (max-width: 725px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 655px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 645px;
+  }
+}
+
+@media only screen and (max-width: 682px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 635px;
+  }
+}
+
+@media only screen and (max-width: 671px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 625px;
+  }
+}
+
+@media only screen and (max-width: 655px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 615px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 600px;
+  }
+}
+
+@media only screen and (max-width: 618px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 580px;
+  }
+}
+
+@media only screen and (max-width: 587px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 565px;
+  }
+}
+
+@media only screen and (max-width: 557px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 545px;
+  }
+}
+
+@media only screen and (max-width: 535px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 530px;
+  }
+}
+
+@media only screen and (max-width: 512px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 520px;
+  }
+}
+
+@media only screen and (max-width: 486px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 505px;
+  }
+}
+
+@media only screen and (max-width: 465px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 490px;
+  }
+}
+
+@media only screen and (max-width: 442px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 480px;
+  }
+}
+
+@media only screen and (max-width: 427px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 470px;
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 460px;
+  }
+}
+
+@media only screen and (max-width: 396px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 450px;
+  }
+}
+
+@media only screen and (max-width: 381px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 440px;
+  }
+}
+
+@media only screen and (max-width: 366px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 430px;
+  }
+}
+
+@media only screen and (max-width: 351px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 420px;
+  }
+}
+
+@media only screen and (max-width: 336px) {
+  .services-carousel {
+    overflow: hidden;
+    height: 405px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -1101,13 +1338,8 @@ video#video_background {
   margin-bottom: 20px;
 }
 
-.services-carousel {
+/* .services-carousel {
   overflow: hidden;
-  height: 462.594px;
-}
-
-/* .services-carousel > .element.relative {
-  width: 380px;
   height: 462.594px;
 } */
 

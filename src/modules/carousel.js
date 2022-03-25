@@ -1,20 +1,29 @@
 const carousel = () => {
   const services = document.querySelector(".services-elements");
-  const servicesCarousel = document.querySelector(".services-carousel");
+  const servicesElems = document.querySelectorAll(".element.relative");
   const slideItems = document.querySelectorAll(".col-sm-6.col-md-4");
-  //const styles = window.getComputedStyle(document.querySelector(".img-wrapper"),'::before');
-  const carouselModalBtn = document.querySelector(".absolute.fancyboxModal");
-  //const carouselModalBtn = styles[content];
+  const carouselModalBtn = document.querySelectorAll(".absolute.fancyboxModal");
   const modal = document.querySelector(".modal-callback");
   const modalOverlay = document.querySelector(".modal-overlay");
   const arrowLeft = document.querySelector(".arrow-left");
   const arrowRight = document.querySelector(".arrow-right");
+  const screenWidth = screen.width;
 
+  console.log(servicesElems);
 
-  //let currentSlide = 0;
   let slideSteps = 0;
-  let slideAmountVisible = 3;
   let slideAmount = 6;
+  let slideAmountVisible;
+
+  if(screenWidth >= 992){
+    slideAmountVisible = 3;
+  }else if(screenWidth <= 991 && screenWidth >= 768){
+    slideAmountVisible = 2;
+  }else{
+    slideAmountVisible = 1;
+  }
+
+  
 
 
   const prevSlide = () => {
@@ -28,11 +37,12 @@ const carousel = () => {
 
   const nextSlide = () => {
     if(slideSteps < slideAmount - slideAmountVisible){
+      console.log(slideAmountVisible);
       slideItems.forEach((item, index) => {
-        //item.style.transform = "translateX("+(-400)+"px)";
         slideItems[slideSteps].style.display = "none";
       });
       slideSteps++;
+      console.log(slideSteps);
     }
   };
 
@@ -44,13 +54,21 @@ const carousel = () => {
     nextSlide();
   });
 
-  carouselModalBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+  servicesElems.forEach((elem) => {
+    elem.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      console.log(e.target);
     
-    modal.style.display = "block";
-    modalOverlay.style.display = "block";
+      if(e.target.classList.contains("img-wrapper")){
+        modal.style.display = "block";
+        modalOverlay.style.display = "block";
+      }
+      
     
+    });
   });
+  
   
 };
 
