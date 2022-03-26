@@ -9,7 +9,7 @@ const carousel = () => {
   const arrowRight = document.querySelector(".arrow-right");
   const screenWidth = window.innerWidth;
 
-  console.log(screenWidth);
+  //console.log(screenWidth);
 
   let slideSteps = 0;
   let slideAmount = 6;
